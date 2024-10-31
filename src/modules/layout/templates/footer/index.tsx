@@ -1,5 +1,6 @@
 import { Text, clx } from "@medusajs/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -10,7 +11,13 @@ export default function Footer() {
           
           {/* Logo et Description */}
           <div className="lg:w-1/3">
-          <img src="/logo.svg" alt="Candles and pots Logo" className="w-20 h-auto mb-4 mx-auto lg:mx-0" />
+          <Image
+              src="/logo.svg"
+              alt="Candlesandpots Logo"
+              width={80} // ajuste la largeur selon vos besoins
+              height={80} // ajuste la hauteur selon vos besoins
+              className="mb-4 mx-auto lg:mx-0"
+            />
             <h2 className="text-2xl font-bold mb-2 tracking-wide">Candles and pots</h2>
             <Text className="txt-small text-[#3b1b00] opacity-80">
               Découvrez l&apos;alliance parfaite entre artisanat authentique et élégance intemporelle. Chaque bougie et pot qui sort de notre atelier raconte une histoire unique, façonnée avec passion.
