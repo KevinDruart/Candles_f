@@ -10,7 +10,8 @@ export default function Footer() {
           
           {/* Logo et Description */}
           <div className="lg:w-1/3">
-            <h2 className="text-2xl font-bold mb-2 tracking-wide">Candlesandpots</h2>
+          <img src="/logo.svg" alt="Candles and pots Logo" className="w-20 h-auto mb-4 mx-auto lg:mx-0" />
+            <h2 className="text-2xl font-bold mb-2 tracking-wide">Candles and pots</h2>
             <Text className="txt-small text-[#3b1b00] opacity-80">
               Découvrez l&apos;alliance parfaite entre artisanat authentique et élégance intemporelle. Chaque bougie et pot qui sort de notre atelier raconte une histoire unique, façonnée avec passion.
             </Text>
@@ -68,7 +69,7 @@ export default function Footer() {
         {/* Section Copyright */}
         <div className="mt-12 pt-4 text-center">
           <Text className="txt-compact-small text-[#3b1b00] opacity-70">
-            &copy; {new Date().getFullYear()} Candlesandpots. Tous droits réservés.
+            &copy; {new Date().getFullYear()} Candles and pots. Tous droits réservés.
           </Text>
         </div>
       </div>
