@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Logo et Description */}
           <div className="lg:w-1/3">
           <Image
-              src="/logo.svg"
+              src="/Logo.png"
               alt="Candlesandpots Logo"
               width={80} // ajuste la largeur selon vos besoins
               height={80} // ajuste la hauteur selon vos besoins
