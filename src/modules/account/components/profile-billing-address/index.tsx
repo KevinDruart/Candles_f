@@ -53,7 +53,7 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
 
   const currentInfo = useMemo(() => {
     if (!billingAddress) {
-      return "No billing address"
+      return "Aucune adresse de facturation n'a été trouvée"
     }
 
     const country =
@@ -81,8 +81,8 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
 
   return (
     <form action={formAction} onReset={() => clearState()} className="w-full">
-         <AccountInfo
-        label="adresse de facturation"
+      <AccountInfo
+        label="Billing address"
         currentInfo={currentInfo}
         isSuccess={successState}
         isError={!!state.error}
@@ -94,49 +94,49 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
             <Input
               label="Prénom"
               name="billing_address.first_name"
-              defaultValue={customer.billing_address?.first_name || undefined}
+              defaultValue={billingAddress?.first_name || undefined}
               required
               data-testid="billing-first-name-input"
             />
             <Input
               label="Nom"
               name="billing_address.last_name"
-              defaultValue={customer.billing_address?.last_name || undefined}
+              defaultValue={billingAddress?.last_name || undefined}
               required
               data-testid="billing-last-name-input"
             />
           </div>
           <Input
-            label="Company"
+            label="Societé"
             name="billing_address.company"
-            defaultValue={customer.billing_address?.company || undefined}
+            defaultValue={billingAddress?.company || undefined}
             data-testid="billing-company-input"
           />
           <Input
             label="Adresse"
             name="billing_address.address_1"
-            defaultValue={customer.billing_address?.address_1 || undefined}
+            defaultValue={billingAddress?.address_1 || undefined}
             required
             data-testid="billing-address-1-input"
           />
           <Input
-            label="Appartement, batiment, suite, etc."
+            label="Appartment, batiment, suite, etc."
             name="billing_address.address_2"
-            defaultValue={customer.billing_address?.address_2 || undefined}
+            defaultValue={billingAddress?.address_2 || undefined}
             data-testid="billing-address-2-input"
           />
           <div className="grid grid-cols-[144px_1fr] gap-x-2">
             <Input
               label="Code postal"
               name="billing_address.postal_code"
-              defaultValue={customer.billing_address?.postal_code || undefined}
+              defaultValue={billingAddress?.postal_code || undefined}
               required
               data-testid="billing-postcal-code-input"
             />
             <Input
               label="Ville"
               name="billing_address.city"
-              defaultValue={customer.billing_address?.city || undefined}
+              defaultValue={billingAddress?.city || undefined}
               required
               data-testid="billing-city-input"
             />
@@ -144,21 +144,20 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
           <Input
             label="Province"
             name="billing_address.province"
-            defaultValue={customer.billing_address?.province || undefined}
+            defaultValue={billingAddress?.province || undefined}
             data-testid="billing-province-input"
           />
           <NativeSelect
             name="billing_address.country_code"
-            defaultValue={customer.billing_address?.country_code || undefined}
+            defaultValue={billingAddress?.country_code || undefined}
             required
             data-testid="billing-country-code-select"
           >
             <option value="">-</option>
             {regionOptions.map((option, i) => {
               return (
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                <option key={i} value={option.value}>
-                  {option.label}
+                <option key={i} value={option?.value}>
+                  {option?.label}
                 </option>
               )
             })}
