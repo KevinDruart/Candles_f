@@ -1,3 +1,4 @@
+// biome-ignore lint/style/useImportType: <explanation>
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
@@ -5,6 +6,7 @@ import Wrapper from "@modules/checkout/components/payment-wrapper"
 import CheckoutForm from "@modules/checkout/templates/checkout-form"
 import CheckoutSummary from "@modules/checkout/templates/checkout-summary"
 import { enrichLineItems, retrieveCart } from "@lib/data/cart"
+// biome-ignore lint/style/useImportType: <explanation>
 import { HttpTypes } from "@medusajs/types"
 import { getCustomer } from "@lib/data/customer"
 
@@ -19,6 +21,7 @@ const fetchCart = async () => {
   }
 
   if (cart?.items?.length) {
+    // biome-ignore lint/style/noNonNullAssertion: <explanation>
     const enrichedItems = await enrichLineItems(cart?.items, cart?.region_id!)
     cart.items = enrichedItems as HttpTypes.StoreCartLineItem[]
   }

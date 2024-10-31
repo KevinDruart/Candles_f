@@ -81,8 +81,8 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
 
   return (
     <form action={formAction} onReset={() => clearState()} className="w-full">
-      <AccountInfo
-        label="Billing address"
+         <AccountInfo
+        label="adresse de facturation"
         currentInfo={currentInfo}
         isSuccess={successState}
         isError={!!state.error}
@@ -92,16 +92,16 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
         <div className="grid grid-cols-1 gap-y-2">
           <div className="grid grid-cols-2 gap-x-2">
             <Input
-              label="First name"
+              label="Prénom"
               name="billing_address.first_name"
-              defaultValue={billingAddress?.first_name || undefined}
+              defaultValue={customer.billing_address?.first_name || undefined}
               required
               data-testid="billing-first-name-input"
             />
             <Input
-              label="Last name"
+              label="Nom"
               name="billing_address.last_name"
-              defaultValue={billingAddress?.last_name || undefined}
+              defaultValue={customer.billing_address?.last_name || undefined}
               required
               data-testid="billing-last-name-input"
             />
@@ -109,34 +109,34 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
           <Input
             label="Company"
             name="billing_address.company"
-            defaultValue={billingAddress?.company || undefined}
+            defaultValue={customer.billing_address?.company || undefined}
             data-testid="billing-company-input"
           />
           <Input
-            label="Address"
+            label="Adresse"
             name="billing_address.address_1"
-            defaultValue={billingAddress?.address_1 || undefined}
+            defaultValue={customer.billing_address?.address_1 || undefined}
             required
             data-testid="billing-address-1-input"
           />
           <Input
-            label="Apartment, suite, etc."
+            label="Appartement, batiment, suite, etc."
             name="billing_address.address_2"
-            defaultValue={billingAddress?.address_2 || undefined}
+            defaultValue={customer.billing_address?.address_2 || undefined}
             data-testid="billing-address-2-input"
           />
           <div className="grid grid-cols-[144px_1fr] gap-x-2">
             <Input
-              label="Postal code"
+              label="Code postal"
               name="billing_address.postal_code"
-              defaultValue={billingAddress?.postal_code || undefined}
+              defaultValue={customer.billing_address?.postal_code || undefined}
               required
               data-testid="billing-postcal-code-input"
             />
             <Input
-              label="City"
+              label="Ville"
               name="billing_address.city"
-              defaultValue={billingAddress?.city || undefined}
+              defaultValue={customer.billing_address?.city || undefined}
               required
               data-testid="billing-city-input"
             />
@@ -144,20 +144,21 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
           <Input
             label="Province"
             name="billing_address.province"
-            defaultValue={billingAddress?.province || undefined}
+            defaultValue={customer.billing_address?.province || undefined}
             data-testid="billing-province-input"
           />
           <NativeSelect
             name="billing_address.country_code"
-            defaultValue={billingAddress?.country_code || undefined}
+            defaultValue={customer.billing_address?.country_code || undefined}
             required
             data-testid="billing-country-code-select"
           >
             <option value="">-</option>
             {regionOptions.map((option, i) => {
               return (
-                <option key={i} value={option?.value}>
-                  {option?.label}
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                <option key={i} value={option.value}>
+                  {option.label}
                 </option>
               )
             })}
