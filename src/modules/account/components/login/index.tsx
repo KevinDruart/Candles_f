@@ -22,24 +22,24 @@ const Login = ({ setCurrentView }: Props) => {
       <form className="w-full" action={formAction}>
       <div className="flex flex-col w-full gap-y-4">
           <Input
-            placeholder="Email"
+  
             name="email"
             type="email"
             title="Entrez une adresse email valide."
             autoComplete="email"
             required
             data-testid="email-input"
-            className="p-3 border border-[#f5d6c3] rounded-md focus:outline-none focus:ring-2 focus:ring-[#3b1b00] bg-white text-[#3b1b00]"
-          />
+            className="p-3 border border-[#f5d6c3] rounded-md focus:outline-none focus:ring-2 focus:ring-[#3b1b00] bg-white text-[#3b1b00]" 
+            label="Email"         />
           <Input
-          placeholder="Mot de passe"
+
             name="password"
             type="password"
             autoComplete="current-password"
             required
             data-testid="password-input"
-            className="p-3 border border-[#f5d6c3] rounded-md focus:outline-none focus:ring-2 focus:ring-[#3b1b00] bg-white text-[#3b1b00]"
-          />
+            className="p-3 border border-[#f5d6c3] rounded-md focus:outline-none focus:ring-2 focus:ring-[#3b1b00] bg-white text-[#3b1b00]" 
+            label="Mot de passe"        />
         </div>
         <ErrorMessage error={message} data-testid="login-error-message" />
         <SubmitButton data-testid="sign-in-button" className="w-full mt-6 bg-[#3b1b00] text-white py-3 rounded-full hover:bg-[#f5d6c3] hover:text-[#3b1b00] transition">Se connecter</SubmitButton>
